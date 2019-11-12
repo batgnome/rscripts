@@ -17,6 +17,6 @@ class Cafe
     @prices[item].to_i
   end
 end
-
+#this is a comment
 cafe = Cafe.new
 puts cafe.espresso(:latte, milk: :soy, hi: :almond)
