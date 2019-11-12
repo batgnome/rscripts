@@ -4,4 +4,4 @@ class Happy
   end
 
 end
-Happy.new("I'm happy")
+Happy.new("I'm not happy!")
