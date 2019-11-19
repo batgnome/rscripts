@@ -13,10 +13,18 @@ class Cafe
     end
   end
 
+  def order(*order)
+
+    order.map! { |e| e.split(' ') }.each {|e| e.each{|i| if i == 'latte' then puts 'good ' end}}
+
+
+
+  end
+
   def self.check_prices(item)
     @prices[item].to_i
   end
 end
 #this is a comment
 cafe = Cafe.new
-puts cafe.espresso(:latte, milk: :soy, hi: :almond)
+puts cafe.order('vanilla soy latte', 'almond danish')
