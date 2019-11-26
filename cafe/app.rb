@@ -10,6 +10,9 @@ CAFE.order('drink vanilla soy latte', 'drink soy milk americano', 'pastry browni
 
 input = ''
 until input == 'exit'
-  puts 'whatcha want?'
+  puts 'Are you ready to order?'
   input = gets.chomp
+  if input == 'yes' then
+    puts "Ok, what would you like?(if you want a menu type 'menu')"
+  end
 end
