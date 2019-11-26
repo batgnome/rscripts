@@ -1,30 +1,35 @@
 require_relative "drink"
+require_relative "pastry"
+
 class Cafe
-  @prices = {
-    'latte' => 1,
-    almond: 2,
-    latte: 4,
-    americano: 3,
-  }
-  def espresso(drink, **kwargs)
-    price = self.class.check_prices(drink)
-    price + kwargs.sum do |thing, choice|
-      self.class.check_prices(choice)
-    end
+  def initialize
+    @items = []
   end
 
   def order(*order)
-
-    order.map! { |e| e.split(' ') }.each {|e| e.each{|i| if i == 'latte' then puts 'good ' end}}
-
-
-
+    order.each do |e|
+      type, *order = e.split
+      if e.include?('drink')
+        self.add(Drink.new(order.join(' ')))
+      elsif e.include?('pastry')
+        self.add(Pastry.new(order.first))
+      end
+    end
+    self.print_recipt
   end
 
-  def self.check_prices(item)
-    @prices[item].to_i
+  def add(item)
+    @items << item
   end
+
+  def print_recipt
+
+    @items.each { |e| e.list  }
+    puts '-' * 14
+    puts "#{'total'.ljust(11)} #{@items.sum { |e| e.total  }}"
+  end
+
 end
-#this is a comment
 cafe = Cafe.new
-puts cafe.order('vanilla soy latte', 'almond danish')
+cafe.order('drink vanilla soy latte', 'drink soy milk americano', 'pastry brownie')
+# cafe.print_recipt
