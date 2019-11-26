@@ -2,5 +2,5 @@
 
 ### To do
 
- - [] order class
- - [] move pricing to cafe
+ - [ ] order class
+ - [ ] move pricing to cafe
