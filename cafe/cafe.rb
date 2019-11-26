@@ -1,5 +1,4 @@
-require_relative "drink"
-require_relative "pastry"
+
 
 class Cafe
   def initialize
@@ -30,6 +29,3 @@ class Cafe
   end
 
 end
-cafe = Cafe.new
-cafe.order('drink vanilla soy latte', 'drink soy milk americano', 'pastry brownie')
-# cafe.print_recipt
