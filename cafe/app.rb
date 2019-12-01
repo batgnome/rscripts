@@ -1,6 +1,7 @@
 require_relative "drink"
 require_relative "pastry"
 require_relative "cafe"
+require_relative "order"
 
 
 CAFE = Cafe.new
@@ -10,9 +11,16 @@ CAFE.order('drink vanilla soy latte', 'drink soy milk americano', 'pastry browni
 
 input = ''
 until input == 'exit'
-  puts 'Are you ready to order?'
+  puts "Would you like to see a menu or are you ready to order?(type 'menu' for menu)"
   input = gets.chomp
-  if input == 'yes' then
-    puts "Ok, what would you like?(if you want a menu type 'menu')"
+  case input
+    when 'yes'
+
+    when 'menu'
+      Order.new.class.prices
+    when 'exit'
+      puts 'Thank you for shopping!'
+    else
+      puts "please input something valid"
   end
 end

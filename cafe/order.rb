@@ -15,4 +15,14 @@ class Order
     'almond' => 2,
     'vanilla' => 1,
   }
+  def self.prices
+    puts "Drinks:".center(16)
+    @drink_prices.each { |e| puts "#{e[0].to_s.ljust(12)}$#{e[1]}"}
+    puts "Pastries:".center(16)
+    @pastry_prices.each { |e| puts "#{e[0].to_s.ljust(12)}$#{e[1]}"}
+    puts "Add ons:".center(16)
+    @add_on_prices.each { |e| puts "#{e[0].to_s.ljust(12)}$#{e[1]}"}
+
+  end
 end
+#Order.new.class.prices
