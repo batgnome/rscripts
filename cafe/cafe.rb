@@ -1,8 +1,11 @@
 class Cafe
+  @done = false
   def initialize
     @items = []
   end
-
+  def self.check_done
+    return @done
+  end
   def order(*order)
     order.each do |e|
       type, *order = e.split
@@ -13,6 +16,14 @@ class Cafe
       end
     end
     self.print_recipt
+  end
+
+  def input(input)
+    puts 'what would you like?'
+    unless input == 'exit'
+        puts 'ok'
+        @done = true
+    end
   end
 
   def add(item)
