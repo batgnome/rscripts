@@ -15,7 +15,28 @@ class Order
     'almond' => 2,
     'vanilla' => 1,
   }
-  def self.prices
+  def self.all_item_prices
+    @pastry_prices.merge(@drink_prices)
+  end
+
+  def self.add_on_prices
+    @add_on_prices
+  end
+
+  def self.check_type(item)
+
+    case item
+      when @pastry_prices.has_key?(item)
+        return "pastry"
+      when @drink_prices.has_key?(item)
+        return "drink"
+      else
+        return ""
+    end
+
+  end
+
+  def self.menu
     puts "_"*16
     puts "Drinks:".center(16)
     @drink_prices.each { |e| puts "#{e[0].to_s.ljust(12)}$#{e[1]}"}
@@ -25,5 +46,6 @@ class Order
     @add_on_prices.each { |e| puts "#{e[0].to_s.ljust(12)}$#{e[1]}"}
     puts "_"*16
   end
+
 end
 #Order.new.class.prices

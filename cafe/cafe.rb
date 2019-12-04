@@ -1,11 +1,12 @@
 class Cafe
-  @done = true
+
   def initialize
     @items = []
   end
   def self.check_done
     return @done
   end
+
   def order(*order)
     order.each do |e|
       type, *order = e.split
@@ -18,11 +19,28 @@ class Cafe
     self.print_recipt
   end
 
-  def input(input)
-    puts 'what would you like?'
-    unless input == 'exit'
-        puts 'ok'
-        @done = false
+  def input
+
+    input = ''
+    puts 'what would you like?(type menu for menu)'
+    order_input =''
+    until input == 'exit'
+
+      input = gets.chomp
+      if input == 'menu' then
+        Order.new.class.menu
+      end
+
+      if Order.new.class.all_item_prices.has_key?(input) then
+        order_input += input + " "
+        puts order_input
+      end
+
+      if Order.new.class.add_on_prices.has_key?(input) then
+        puts "please order a drink first"
+      end
+
+
     end
   end
 
