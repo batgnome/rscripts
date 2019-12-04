@@ -18,7 +18,6 @@ until input == 'exit'
         CAFE.input(input)
     when 'menu'
       Order.new.class.prices
-      until CAFE.class.check_done break end
     when 'exit'
       puts 'Thank you for shopping!'
     else

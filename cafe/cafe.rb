@@ -1,5 +1,5 @@
 class Cafe
-  @done = false
+  @done = true
   def initialize
     @items = []
   end
@@ -22,7 +22,7 @@ class Cafe
     puts 'what would you like?'
     unless input == 'exit'
         puts 'ok'
-        @done = true
+        @done = false
     end
   end
 
