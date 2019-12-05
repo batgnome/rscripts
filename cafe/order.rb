@@ -27,11 +27,11 @@ class Order
 
     case item
       when @pastry_prices.has_key?(item)
-        return "pastry"
+        "pastry"
       when @drink_prices.has_key?(item)
-        return "drink"
+        "drink"
       else
-        return ""
+        ""
     end
 
   end

@@ -3,9 +3,6 @@ class Cafe
   def initialize
     @items = []
   end
-  def self.check_done
-    return @done
-  end
 
   def order(*order)
     order.each do |e|
@@ -19,7 +16,7 @@ class Cafe
     self.print_recipt
   end
 
-  def input
+  def input_loop
 
     input = ''
     puts 'what would you like?(type menu for menu)'
@@ -27,16 +24,16 @@ class Cafe
     until input == 'exit'
 
       input = gets.chomp
-      if input == 'menu' then
-        Order.new.class.menu
+      if input == 'menu'
+        Order.menu
       end
 
-      if Order.new.class.all_item_prices.has_key?(input) then
+      if Order.all_item_prices.has_key?(input)
         order_input += input + " "
         puts order_input
       end
 
-      if Order.new.class.add_on_prices.has_key?(input) then
+      if Order.add_on_prices.has_key?(input)
         puts "please order a drink first"
       end
 

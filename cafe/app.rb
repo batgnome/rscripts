@@ -17,9 +17,9 @@ until input == 'exit'
 
   case input
     when 'yes'
-        CAFE.input
+        CAFE.input_loop
     when 'menu'
-      Order.new.class.menu
+      Order.menu
     when 'exit'
       puts 'Thank you for shopping!'
     else
