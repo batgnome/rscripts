@@ -17,7 +17,7 @@ until input == 'exit'
 
   case input
     when 'yes'
-        CAFE.input_loop
+        CAFE.get_items
     when 'menu'
       Order.menu
     when 'exit'

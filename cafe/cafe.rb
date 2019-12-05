@@ -1,3 +1,5 @@
+require_relative 'drink.rb'
+require_relative 'pastry.rb'
 class Cafe
 
   def initialize
@@ -41,6 +43,21 @@ class Cafe
     end
   end
 
+  def get_items
+    input =''
+    until input == 'exit'
+      input = gets.chomp
+
+
+    end
+
+  end
+
+  def create_item(string)
+    type = Drink.create(string) || Pastry.create(string)
+
+  end
+
   def add(item)
     @items << item
   end
@@ -53,3 +70,5 @@ class Cafe
   end
 
 end
+c = Cafe.new
+puts c.create_item('brownide').nil?

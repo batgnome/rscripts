@@ -10,6 +10,16 @@ class Pastry
     @pastry = item
   end
 
+  def self.create(string)
+    if viable?(string)
+      self.new(string)
+    end
+  end
+
+  def self.viable?(string)
+    @pastry_prices.has_key?(string)
+  end
+
   def total
     self.class.total(@pastry)
   end
@@ -29,8 +39,6 @@ end
 
 if __FILE__ == $0
 
-  d = Pastry.new('apple pie')
-  a = Pastry.new('danish')
-  puts d.total
-  d.list
+     d = Pastry.create('brownide')
+     #puts d.list
 end

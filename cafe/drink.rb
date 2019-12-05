@@ -19,6 +19,16 @@ class Drink
     # self.class.list(@drink)
   end
 
+  def self.create(string)
+    if viable?(string)
+      self.new(string)
+    end
+  end
+
+  def self.viable?(string)
+    @drink_prices.has_key?(string)
+  end
+
   def total
     self.class.total(@drink)
   end
