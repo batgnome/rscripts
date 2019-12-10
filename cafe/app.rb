@@ -22,6 +22,8 @@ until input == 'exit'
       Order.menu
     when 'exit'
       puts 'Thank you for shopping!'
+    when 'done'
+      CAFE.print_recipt
     else
       puts "please input something valid"
   end

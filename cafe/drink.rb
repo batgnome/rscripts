@@ -53,9 +53,9 @@ class Drink
     head, tail = drink.partition { |word| @drink_prices.key?(word) }
     (head + tail.sort_by{ |e| @drink_prices[e] }).each do |e|
       if @drink_prices.key?(e)
-          puts "#{e.to_s.ljust(13)}#{@drink_prices[e]}"
+          puts "#{e.to_s.ljust(13)}$#{@drink_prices[e]}"
       elsif @add_on_prices.key?(e)
-          puts "-#{e.to_s.ljust(12)}#{@add_on_prices[e]}\n"
+          puts "-#{e.to_s.ljust(12)}$#{@add_on_prices[e]}\n"
       end
     end
   end

@@ -33,7 +33,7 @@ class Pastry
   end
 
   def self.list(pastry)
-    puts "#{pastry.to_s.ljust(13)}#{@pastry_prices[pastry]}\n"
+    puts "#{pastry.to_s.ljust(13)}$#{@pastry_prices[pastry]}\n"
   end
 end
 

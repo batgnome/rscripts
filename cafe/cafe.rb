@@ -47,6 +47,15 @@ class Cafe
     input =''
     until input == 'exit'
       input = gets.chomp
+      case input
+        when 'menu'
+          puts Order.menu
+        when 'exit'
+          puts "would you like to order anything else?"
+        else
+          add(create_item(input))
+      end
+
 
 
     end
@@ -59,14 +68,17 @@ class Cafe
   end
 
   def add(item)
-    @items << item
+    unless item.nil?
+      @items << item
+    end
   end
 
   def print_recipt
-
-    @items.each { |e| e.list  }
-    puts '-' * 14
-    puts "#{'total'.ljust(11)} #{@items.sum { |e| e.total  }}"
+    unless @items.empty?
+      @items.each { |e| e.list  }
+      puts '-' * 14
+      puts "#{'total'.ljust(11)} $#{@items.sum { |e| e.total  }}"
+    end
   end
 
 end
