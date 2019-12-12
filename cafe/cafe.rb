@@ -45,6 +45,7 @@ class Cafe
 
   def get_items
     input =''
+    puts "Fantastic, what would you like?"
     until input == 'exit'
       input = gets.chomp
       case input
@@ -77,7 +78,7 @@ class Cafe
     unless @items.empty?
       @items.each { |e| e.list  }
       puts '-' * 14
-      puts "#{'total'.ljust(11)} $#{@items.sum { |e| e.total  }}"
+      puts "#{'total'.ljust(12)} $#{@items.sum { |e| e.total  }}"
     end
   end
 
