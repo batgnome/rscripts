@@ -23,6 +23,14 @@ class Order
     @add_on_prices
   end
 
+  def self.pastry_prices
+    @pastry_prices
+  end
+
+  def self.drink_prices
+    @drink_prices
+  end
+
   def self.check_type(item)
 
     case item

@@ -1,10 +1,5 @@
 
 class Pastry
-  @pastry_prices = {
-   'brownie' => 3,
-   'apple pie' => 4,
-   'danish' => 5,
- }
 
   def initialize(item)
     @pastry = item
@@ -17,7 +12,7 @@ class Pastry
   end
 
   def self.viable?(string)
-    @pastry_prices.has_key?(string)
+    Order.pastry_prices.has_key?(string)
   end
 
   def total
@@ -29,11 +24,11 @@ class Pastry
   end
 
   def self.total(pastry)
-    @pastry_prices[pastry]
+    Order.pastry_prices[pastry]
   end
 
   def self.list(pastry)
-    puts "#{pastry.to_s.ljust(13)}$#{@pastry_prices[pastry]}\n"
+    puts "#{pastry.to_s.ljust(13)}$#{Order.pastry_prices[pastry]}\n"
   end
 end
 

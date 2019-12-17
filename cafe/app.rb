@@ -1,7 +1,7 @@
+require_relative "order"
 require_relative "drink"
 require_relative "pastry"
 require_relative "cafe"
-require_relative "order"
 
 
 CAFE = Cafe.new
@@ -17,7 +17,7 @@ until input == 'exit'
 
   case input
     when 'yes'
-        CAFE.get_items
+      CAFE.get_items
     when 'menu'
       Order.menu
     when 'exit'

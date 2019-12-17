@@ -1,32 +1,20 @@
 class Drink
-  @drink_prices = {
-   'latte' => 3,
-   'americano' => 4,
-   'mocha' => 5,
- }
-
-  @add_on_prices = {
-    'soy' => 2,
-    'milk' => 1,
-    'almond' => 2,
-    'vanilla' => 1,
-  }
 
 
   def initialize(item)
     @drink = item.split(" ")
-    # self.class.total(@drink)
-    # self.class.list(@drink)
   end
 
   def self.create(string)
-    if viable?(string)
+    if viable?(string.split(" "))
       self.new(string)
     end
   end
 
-  def self.viable?(string)
-    @drink_prices.has_key?(string)
+  def self.viable?(array)
+    overlapping_counter = array.count { |e| Order.drink_prices.has_key?(e) }
+    overlapping_counter == 1
+
   end
 
   def total
@@ -40,22 +28,22 @@ class Drink
   def self.total(drink)
     sum = 0
     drink.map do |e|
-      if @drink_prices.key?(e) then
-        sum += @drink_prices[e]
-      elsif @add_on_prices.key?(e) then
-        sum += @add_on_prices[e]
+      if Order.drink_prices.key?(e) then
+        sum += Order.drink_prices[e]
+      elsif Order.add_on_prices.key?(e) then
+        sum += Order.add_on_prices[e]
       end
     end
     sum
   end
 
   def self.list(drink)
-    head, tail = drink.partition { |word| @drink_prices.key?(word) }
-    (head + tail.sort_by{ |e| @drink_prices[e] }).each do |e|
-      if @drink_prices.key?(e)
-          puts "#{e.to_s.ljust(13)}$#{@drink_prices[e]}"
-      elsif @add_on_prices.key?(e)
-          puts "-#{e.to_s.ljust(12)}$#{@add_on_prices[e]}\n"
+    head, tail = drink.partition { |word| Order.drink_prices.key?(word) }
+    (head + tail.sort_by{ |e| Order.drink_prices[e] }).each do |e|
+      if Order.drink_prices.key?(e)
+          puts "#{e.to_s.ljust(13)}$#{Order.drink_prices[e]}"
+      elsif Order.add_on_prices.key?(e)
+          puts "-#{e.to_s.ljust(12)}$#{Order.add_on_prices[e]}\n"
       end
     end
   end
