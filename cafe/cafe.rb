@@ -33,6 +33,9 @@ class Cafe
   def add(item)
     unless item.nil?
       @items << item
+      puts "Anything else?"
+    else
+      puts "I'm sorry, that is not a valid item"
     end
   end
 
@@ -41,7 +44,13 @@ class Cafe
       @items.each { |e| e.list  }
       puts '-' * 14
       puts "#{'total'.ljust(12)} $#{@items.sum { |e| e.total  }}"
+    else
+      puts "You haven't ordered anything yet"
     end
+  end
+
+  def list
+    puts @items
   end
 
 end

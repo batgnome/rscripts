@@ -16,19 +16,11 @@ class Pastry
   end
 
   def total
-    self.class.total(@pastry)
+    Order.pastry_prices[@pastry]
   end
 
   def list
-    self.class.list(@pastry)
-  end
-
-  def self.total(pastry)
-    Order.pastry_prices[pastry]
-  end
-
-  def self.list(pastry)
-    puts "#{pastry.to_s.ljust(13)}$#{Order.pastry_prices[pastry]}\n"
+    puts "#{@pastry.to_s.ljust(13)}$#{Order.pastry_prices[pastry]}\n"
   end
 end
 
