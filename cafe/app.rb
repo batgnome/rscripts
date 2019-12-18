@@ -8,15 +8,14 @@ CAFE = Cafe.new
 #CAFE.order('drink vanilla soy latte', 'drink soy milk americano', 'pastry brownie')
 # cafe.print_recipt
 
-
+puts "Hello and welcome to the Ruby Cafe! If you are ready to order type 'ok'! for more options type 'help'!"
 input = ''
 until input == 'exit'
 
-  puts "Would you like to see a menu or are you ready to order?(type 'hlep' for a list of commands)"
   input = gets.chomp
 
   case input
-    when 'yes'
+    when 'ok'
       CAFE.get_items
     when 'help'
       puts "'menu' => menu \n'print' => print reciept\n'list' => to list your items\n'exit' => to exit"

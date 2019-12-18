@@ -17,7 +17,6 @@ class Cafe
         when 'exit'
           puts "would you like to order anything else?"
         else
-          input.split(', ')
           add(create_item(input))
       end
 
@@ -54,5 +53,3 @@ class Cafe
   end
 
 end
-c = Cafe.new
-puts c.create_item('brownide').nil?

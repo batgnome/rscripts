@@ -20,7 +20,7 @@ class Pastry
   end
 
   def list
-    puts "#{@pastry.to_s.ljust(13)}$#{Order.pastry_prices[pastry]}\n"
+    puts "#{@pastry.to_s.ljust(13)}$#{Order.pastry_prices[@pastry]}\n"
   end
 end
 

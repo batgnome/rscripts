@@ -15,9 +15,6 @@ class Order
     'almond' => 2,
     'vanilla' => 1,
   }
-  def self.all_item_prices
-    @pastry_prices.merge(@drink_prices)
-  end
 
   def self.add_on_prices
     @add_on_prices
