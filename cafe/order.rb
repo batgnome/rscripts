@@ -28,19 +28,6 @@ class Order
     @drink_prices
   end
 
-  def self.check_type(item)
-
-    case item
-      when @pastry_prices.has_key?(item)
-        "pastry"
-      when @drink_prices.has_key?(item)
-        "drink"
-      else
-        ""
-    end
-
-  end
-
   def self.menu
     puts "_"*16
     puts "Drinks:".center(16)

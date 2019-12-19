@@ -5,8 +5,6 @@ require_relative "cafe"
 
 
 CAFE = Cafe.new
-#CAFE.order('drink vanilla soy latte', 'drink soy milk americano', 'pastry brownie')
-# cafe.print_recipt
 
 puts "Hello and welcome to the Ruby Cafe! If you are ready to order type 'ok'! for more options type 'help'!"
 input = ''
@@ -27,6 +25,11 @@ until input == 'exit'
       puts 'Thank you for shopping!'
     when 'print'
       CAFE.print_recipt
+      puts "Are you done ordering?"
+      if gets.chomp == 'yes'
+        break
+      end
+
     else
       puts "please input something valid"
   end

@@ -41,9 +41,3 @@ class Drink
   end
 end
 
-if __FILE__ == $0
-
-  d = Drink.new('vanilla soy latte')
-  a = Drink.new('mocha vanilla soy')
-  puts d.total
-end
