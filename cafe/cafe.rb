@@ -7,6 +7,7 @@ class Cafe
   end
 
   def get_items
+
     input =''
     puts "Fantastic, what would you like?"
     until input == 'exit'
