@@ -40,4 +40,3 @@ class Order
   end
 
 end
-#Order.new.class.prices

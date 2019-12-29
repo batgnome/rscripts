@@ -22,10 +22,8 @@ class Pastry
   def list
     puts "#{@pastry.to_s.ljust(13)}$#{Order.pastry_prices[@pastry]}\n"
   end
-end
 
-if __FILE__ == $0
-
-     d = Pastry.create('brownide')
-     #puts d.list
+  def type
+    @pastry
+  end
 end

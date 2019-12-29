@@ -27,9 +27,8 @@ until input == 'exit'
       CAFE.print_recipt
       puts "Are you done ordering?"
       if gets.chomp == 'yes'
-        break
+        input = exit
       end
-
     else
       puts "please input something valid"
   end

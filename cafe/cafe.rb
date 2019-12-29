@@ -9,14 +9,19 @@ class Cafe
   def get_items
 
     input =''
-    puts "Fantastic, what would you like?"
-    until input == 'exit'
+    puts "Fantastic, what would you like?('help' for more info)"
+    until input == 'done'
       input = gets.chomp
       case input
         when 'menu'
           puts Order.menu
         when 'exit'
           puts "would you like to order anything else?"
+          input = 'done'
+        when 'help'
+          puts "'menu' => menu \n'list' => to list your items\n'done' => to exit"
+        when 'list'
+          list
         else
           add(create_item(input))
       end
@@ -50,7 +55,9 @@ class Cafe
   end
 
   def list
-    puts @items
+    puts "_"*12
+    @items.each { |e| puts e.type  }
+    puts "_"*12
   end
 
 end
