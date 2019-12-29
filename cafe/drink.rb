@@ -39,6 +39,7 @@ class Drink
       end
     end
   end
+
   def type
     unless @drink.length == 1
       @drink.join(" ")

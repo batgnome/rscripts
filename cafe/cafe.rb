@@ -15,12 +15,12 @@ class Cafe
       case input
         when 'menu'
           puts Order.menu
-        when 'exit'
+        when 'exit', 'done', 'no'
           puts "would you like to order anything else?"
           input = 'done'
         when 'help'
           puts "'menu' => menu \n'list' => to list your items\n'done' => to exit"
-        when 'list'
+        when 'list', 'orders', 'order'
           list
         else
           add(create_item(input))
@@ -32,7 +32,6 @@ class Cafe
 
   def create_item(string)
     type = Drink.create(string) || Pastry.create(string)
-
   end
 
   def add(item)
@@ -55,9 +54,9 @@ class Cafe
   end
 
   def list
-    puts "_"*12
+    puts "-"*12
     @items.each { |e| puts e.type  }
-    puts "_"*12
+    puts "-"*12
   end
 
 end
