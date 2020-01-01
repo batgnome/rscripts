@@ -21,7 +21,7 @@ until input == 'exit'
       Order.menu
     when 'list'
       CAFE.list
-    when 'exit', 'done', 'no'
+    when 'exit', 'done', 'no', 'nothing'
       puts 'Thank you for shopping!'
       input = 'exit'
       CAFE.print_recipt
@@ -30,6 +30,9 @@ until input == 'exit'
       puts "Are you done ordering?"
       if gets.chomp == ('yes' || 'ok')
         input = exit
+      elsif gets.chomp == 'no'
+        puts "ok, what else would you like?"
+        CAFE.get_items
       end
     else
       puts "please input something valid"

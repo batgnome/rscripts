@@ -1,6 +1,5 @@
 class Drink
 
-
   def initialize(item)
     @drink = item.split(" ")
   end
