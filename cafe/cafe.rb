@@ -9,14 +9,14 @@ class Cafe
   def get_items
 
     input =''
-    puts "Fantastic, what would you like?('help' for more info)"
+    puts "Fantastic, what would you like?\n('menu' => menu \n'list' => to list your items\n'done' => to exit)\n when ordering items, please choose one at a time, thank you"
     until input == 'done'
       input = gets.chomp
       case input
         when 'menu'
           puts Order.menu
         when 'exit', 'done', 'no'
-          puts "would you like to order anything else?"
+          puts "would you like to order anything else?('help' for more options)"
           input = 'done'
         when 'help'
           puts "'menu' => menu \n'list' => to list your items\n'done' => to exit"

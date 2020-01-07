@@ -6,7 +6,7 @@ require_relative "cafe"
 
 CAFE = Cafe.new
 
-puts "Hello and welcome to the Ruby Cafe! If you are ready to order type 'ok'! for more options type 'help'!"
+puts "Hello and welcome to the Ruby Cafe! If you are ready to order type 'ok'. for more options type 'help'."
 input = ''
 until input == 'exit'
 
@@ -16,7 +16,7 @@ until input == 'exit'
     when 'ok', 'yes'
       CAFE.get_items
     when 'help'
-      puts "'menu' => menu \n'print' => print reciept\n'list' => to list your items\n'exit' => to exit"
+      puts "'menu' => menu \n'print' => print reciept\n'list' => to list your items\n'exit' => to exit\n 'ok' => to order items"
     when 'menu'
       Order.menu
     when 'list'

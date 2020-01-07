@@ -37,6 +37,7 @@ class Order
     puts "Add ons:".center(16)
     @add_on_prices.each { |e| puts "#{e[0].to_s.ljust(12)}$#{e[1]}"}
     puts "_"*16
+    puts 'Please order one item at a time, thank you'
   end
 
 end
