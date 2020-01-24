@@ -7,6 +7,9 @@ class Cafe
   def initialize
     @items = []
   end
+  def self.prices(name)
+    rand(5)
+  end
 
   def get_items
 

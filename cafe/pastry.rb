@@ -1,6 +1,8 @@
 
 class Pastry
 
+  include Edible
+
   def initialize(item)
     @pastry = item
   end

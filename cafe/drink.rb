@@ -1,5 +1,7 @@
 class Drink
 
+  include Edible
+
   def initialize(item)
     @drink = item.split(" ")
   end
