@@ -1,5 +1,7 @@
 require_relative 'drink.rb'
 require_relative 'pastry.rb'
+require_relative 'order.rb'
+
 class Cafe
 
   def initialize

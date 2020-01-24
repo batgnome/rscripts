@@ -1,4 +1,4 @@
-class Order
+module Order
   @pastry_prices = {
      'brownie' => 3,
      'apple pie' => 4,
